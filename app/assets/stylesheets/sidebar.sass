@@ -1,0 +1,29 @@
+@import vars
+
+nav.navbar.navbar-dark
+  background-color: $color-dark
+  border-radius: 0
+  min-height: 110px
+
+  .navbar-toggle
+    margin-left: 10px
+    border-color: #ddd
+    background-color: silver
+
+    .icon-bar
+      background-color: #fff
+
+  .navbar-brand
+    margin-top: 25px
+    font-size: 25px
+    color: $header-important-color
+
+    @media screen and (max-width: $medium-devices)
+      margin-top: 0px
+
+  .navbar-nav
+    margin: 25px 0 0 10px
+
+    li
+      a
+        color: $color-main-links
