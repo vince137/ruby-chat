@@ -1,0 +1,14 @@
+<div class='col-xs-2 col-helper'>
+    <div class='title_sec text-center'>
+        Chans
+    </div>
+    <ul class='chan_list'>
+        <li> general </li>
+    </ul>
+    <div class='user_logged title_sec'>
+        @<%= current_user.username %>
+        <%= link_to fa_icon("sign-out", class: "logout_action"), destroy_user_session_path, :method => :delete %>
+    </div>
+</div>
+<div class='col-xs-10 col-separator'>
+</div>

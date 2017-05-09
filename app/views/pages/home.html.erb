@@ -1,3 +1,7 @@
 <div class='container-fluid fill-height'>
-    <div class='chat-container'> </div>
+    <div class='chat-container'>
+        <% if user_signed_in? %>
+            <%= render "chat/chat" %>
+        <% end %>
+    </div>
 </div>
