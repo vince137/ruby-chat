@@ -21,7 +21,7 @@ module ChatBack
 
         desc "Create a room"
         params do
-            requires :title, type: String
+            requires :title, type: String, allow_blank: false
         end
         resource :rooms do
             post do
@@ -30,5 +30,10 @@ module ChatBack
                 Room.create(safe_params);
             end
         end
+
+        get do
+            Room.all()
+        end
+
     end
 end
