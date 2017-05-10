@@ -5,7 +5,11 @@ class Chat
     end
 
     def initialize
-        
+
+    end
+
+    def getRooms
+    
     end
 
 end

@@ -2,37 +2,18 @@
     <div class='title_sec text-center'>
         Chans
     </div>
-    <div class='chan_list'>
-        <ul>
-            <li> general </li>
-            <li> general </li>
-            <li> general </li>
-            <li> general </li>
-            <li> general </li>
-            <li> general </li>
-            <li> general </li>
-            <li> general </li>
-            <li> general </li>
-            <li> general </li>
-            <li> general </li>
-            <li> general </li>
-            <li> general </li>
-            <li> general </li>
-            <li> general </li>
-            <li> general </li>
-            <li> general </li>
-            <li> general </li>
-            <li> general </li>
-            <li> general </li>
-            <li> general </li>
-            <li> general </li>
-            <li> general </li>
-            <li> general </li>
-            <li> general </li>
-            <li> general </li>
-            <li> general </li>
+    <div class='chan_list' data-target="api-list"> </div>
 
-        </ul>
+    <div class='create_chan'>
+        <form method="post" name="js-api" action="/api/rooms/">
+            <input type="hidden" value="<%=current_user.api_token%>" name="token">
+            <div class='col-xs-9'>
+                <input name="title" type='text' class='form-control' placeholder="Channel name">
+            </div>
+            <div class='col-xs-3'>
+                <input type='submit' value='OK' class='btn btn-default'>
+            </div>
+        </form>
     </div>
     <div class='user_logged title_sec'>
         @<%= current_user.username %>
