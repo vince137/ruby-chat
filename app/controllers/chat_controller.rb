@@ -13,8 +13,7 @@ class ChatController < ApplicationController
             Message.on_change do |messages|
                 sse.write({messages: messages}, event: "message")
             end
-        rescue ClientDisconnected
-
+        rescue IOError
         ensure
             sse.close
         end
