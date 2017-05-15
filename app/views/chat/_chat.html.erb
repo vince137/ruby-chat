@@ -21,4 +21,12 @@
     </div>
 </div>
 <div class='col-xs-10 col-separator'>
+    <div class='chat-text'> </div>
+    <div class='send-action'>
+        <form method='post' action="/api/messages/" name="js-api">
+            <input type="hidden" value="<%=current_user.api_token%>" name="token">
+            <input name="message" type='text' class='form-control' value='' placeholder="Message...">
+            <input type='submit' class='btn btn-default' value='OK'>
+        </form>
+    </div>
 </div>
