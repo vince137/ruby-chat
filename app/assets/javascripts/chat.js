@@ -13,6 +13,7 @@ var Chat = {
         var source = new EventSource('/chat/subscribe');
         source.addEventListener('message', function(event) {
             message = JSON.parse(event.data);
+            console.log(message)
         });
     }
 }
