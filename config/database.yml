@@ -13,7 +13,7 @@ development:
   adapter: postgresql
   encoding: utf8
   database: project_development
-  pool: 5
+  pool: 10
   username: postgres
   password: test
 
