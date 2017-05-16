@@ -1,20 +1,20 @@
 class Message < ApplicationRecord
-    after_create :notify_message_added
+    after_save :notify_message_added
 
     def self.on_change
-        Message.connection.execute "LISTEN messages"
+        ActiveRecord::Base.connection.execute "LISTEN messages"
         loop do
-            Message.connection.raw_connection.wait_for_notify do |event, pid, message|
+            ActiveRecord::Base.connection.raw_connection.wait_for_notify do |event, pid, message|
                 yield message
             end
         end
     ensure
-      Message.connection.execute "UNLISTEN messages"
+        ActiveRecord::Base.connection.execute "UNLISTEN messages"
     end
 
     def notify_message_added
-        Message.connection.execute "NOTIFY messages, 'data'"
+        if (message_changed?)
+            Message.connection.execute "NOTIFY messages, '#{message}'"
+        end
     end
-
-
 end
