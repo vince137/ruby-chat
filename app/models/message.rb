@@ -14,7 +14,10 @@ class Message < ApplicationRecord
 
     def notify_message_added
         if (message_changed?)
-            Message.connection.execute "NOTIFY messages, '#{message}'"
+            user_infos = User.find(id_user)
+            if user_infos
+                Message.connection.execute "NOTIFY messages, '#{message} #{user_infos.username}'"
+            end
         end
     end
 end
