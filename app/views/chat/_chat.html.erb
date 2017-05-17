@@ -23,7 +23,7 @@
 <div class='col-xs-10 col-separator'>
     <div class='chat-text'> </div>
     <div class='send-action'>
-        <form method='post' action="/api/messages/" name="js-api">
+        <form method='post' action="/api/messages/" name="js-api" data-success-callback="send_message">
             <input type="hidden" value="<%=current_user.api_token%>" name="token">
             <div style='width:50%; border:1px red solid;'>
                 <input name="message" type='text' class='form-control' value='' placeholder="Message...">

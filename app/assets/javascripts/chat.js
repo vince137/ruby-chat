@@ -15,5 +15,9 @@ var Chat = {
             message = JSON.parse(event.data);
             $(".chat-text").append(message.messages + " <br> ");
         });
+    },
+
+    removeMessageValue: function () {
+        $("input[name='message']").val("");
     }
 }

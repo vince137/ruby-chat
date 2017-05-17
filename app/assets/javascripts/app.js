@@ -12,6 +12,8 @@ $(document).ready(function() {
                 console.log(response);
                 if (callback_success === "chat_displayRoomsList") {
                     Chat.displayRoomsList();
+                } else if (callback_success === "send_message") {
+                    Chat.removeMessageValue();
                 }
             },
             error: function (xhr, status, error) {
