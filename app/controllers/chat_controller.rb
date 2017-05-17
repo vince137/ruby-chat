@@ -1,5 +1,3 @@
-require 'reloader/sse'
-
 class ChatController < ApplicationController
     include ActionController::Live
 
