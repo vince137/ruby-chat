@@ -27,9 +27,6 @@ module ChatBack
         resource :messages do
             post do
                 params['id_user'] = current_user.id
-
-                params['token'].delete
-                
                 safe_params = ActionController::Parameters.new(params).permit(:message, :id_user)
                 Message.create(safe_params);
             end
