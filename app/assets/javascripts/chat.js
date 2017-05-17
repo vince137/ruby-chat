@@ -10,10 +10,10 @@ var Chat = {
     },
 
     messageSubscribe: function() {
-        var source = new EventSource('/chat/subscribe');
+        var source = new EventSource('/rt/subscribe');
         source.addEventListener('message', function(event) {
             message = JSON.parse(event.data);
-            console.log(message)
+            $(".chat-text").append(message.messages + " <br> ");
         });
     }
 }
