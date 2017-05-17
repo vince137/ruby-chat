@@ -25,10 +25,12 @@
     <div class='send-action'>
         <form method='post' action="/api/messages/" name="js-api" data-success-callback="send_message">
             <input type="hidden" value="<%=current_user.api_token%>" name="token">
-            <div style='width:50%; border:1px red solid;'>
+
+
+            <div style='width:50%; float:left; '>
                 <input name="message" type='text' class='form-control' value='' placeholder="Message...">
             </div>
-            <div class='col-xs-1'>
+            <div style='float:left; width:10%; margin-left:10px;'>
                 <input type='submit' class='btn btn-default' value='OK'>
             </div>
         </form>
