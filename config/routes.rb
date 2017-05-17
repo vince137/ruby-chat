@@ -6,6 +6,12 @@ Rails.application.routes.draw do
   mount ChatBack::Rooms => '/'
   mount ChatBack::ChatMessages => '/'
 
+
+scope "/rt", controller: :rt do
+    get :subscribe
+end
+
+
   scope "/chat", controller: :chat do
       get :rooms
       get :subscribe
