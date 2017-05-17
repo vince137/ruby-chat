@@ -16,7 +16,7 @@ class Message < ApplicationRecord
         if (message_changed?)
             user_infos = User.find(id_user)
             if user_infos
-                Message.connection.execute "NOTIFY messages, '#{message} #{user_infos.username}'"
+                Message.connection.execute "NOTIFY messages, '#{user_infos.username} - #{message}'"
             end
         end
     end
